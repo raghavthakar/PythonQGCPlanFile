@@ -86,16 +86,15 @@ class QGCPlanFile:
             }
         self.mission["mission"]["items"].append(land_item)
 
-    def generateMissionFile(self):
-        print(self.mission["mission"]["items"])
-        with open("sample.plan", "w") as outfile:
+    def generateMissionFile(self, filename):
+        with open(filename, "w") as outfile:
             json.dump(self.mission, outfile)
 
-plan_file = QGCPlanFile([47.3985099, 8.5451002, 50])
+# plan_file = QGCPlanFile([47.3985099, 8.5451002, 50])
 
-plan_file.addTakeoffItem(latitude=47.39851, longitude=8.5451002, altitude=50)
-plan_file.addWaypointItem(latitude=47.39857, longitude=8.545109, altitude=50)
-plan_file.addWaypointItem(latitude=47.39817, longitude=8.545109, altitude=50)
-plan_file.addLandItem(latitude=47.39817, longitude=8.545109, altitude=-50)
+# plan_file.addTakeoffItem(latitude=47.39851, longitude=8.5451002, altitude=50)
+# plan_file.addWaypointItem(latitude=47.39857, longitude=8.545109, altitude=50)
+# plan_file.addWaypointItem(latitude=47.39817, longitude=8.545109, altitude=50)
+# plan_file.addLandItem(latitude=47.39817, longitude=8.545109, altitude=-50)
 
-plan_file.generateMissionFile()
+# plan_file.generateMissionFile('sample.plan')
